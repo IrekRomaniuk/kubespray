@@ -215,4 +215,4 @@ kubelet_custom_flags:
   - "--eviction-max-pod-grace-period=-1" 
   - "--eviction-hard=memory.available<300Mi,nodefs.available<1Gi" 
   - "--eviction-pressure-transition-period=10m" 
-  - "--volume-plugin-dir=/var/lib/kubelet/volume-plugins”
+  - "--volume-plugin-dir=/var/lib/kubelet/volume-plugins"
