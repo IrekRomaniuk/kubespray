@@ -8,7 +8,7 @@ netlab ALL=(ALL) NOPASSWD: ALL
 ## How to run
 
 ```
-ansible-playbook -i inventory/netlab/hosts.ini --become --become-user=root cluster.yml
+ansible-playbook -i inventory/netlab/hosts.ini --become --become-user=root cluster.yml --flush-cache
 ansible-playbook -vv -i inventory/netlab/hosts.ini --become --become-user=root cluster.yml -b -v --private-key=~/.ssh/id_rsa
 ```
 # CHANGES
