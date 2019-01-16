@@ -205,3 +205,14 @@ persistent_volumes_enabled: false
 helm_enabled: true
 helm_version: "v2.12.1"
 kubelet_max_pods: 100
+
+# for rook per https://github.com/davidrama/k8s-rook-setup
+
+kubelet_custom_flags: 
+  - "--eviction-hard=memory.available<800Mi" 
+  - "--eviction-soft-grace-period=memory.available=10m,nodefs.available=10m,imagefs.available=10m" 
+  - "--eviction-soft=memory.available<300Mi" 
+  - "--eviction-max-pod-grace-period=-1" 
+  - "--eviction-hard=memory.available<300Mi,nodefs.available<1Gi" 
+  - "--eviction-pressure-transition-period=10m" 
+  - "--volume-plugin-dir=/var/lib/kubelet/volume-plugins”
